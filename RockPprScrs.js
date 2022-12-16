@@ -1,12 +1,16 @@
+// Locking in the choices that the computer has when making a selection
 let choice = ['rock', 'paper', 'scissors'];
 
+// Player score and computer scores are set to 0 for a new game
 let computerScore = 0;
 let playerScore = 0;
 
+// Calling the computer choice, making this random each game
 function getComputerChoice() {
     return choice[Math.ceil(Math.random() * 3) -1];
 }
 
+// Function to play the round, logic around the player's selection vs what is randomly chosen for the computer
 function playRound(playerSelection, computerSelection) {
     let playerSelectionL = playerSelection.toLowerCase();
     if (playerSelectionL == computerSelection) {
@@ -44,6 +48,7 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
+// Game function set to 5 games with a winner declared at the end or calling a tie
 function game(){
     for (let i = 0; i < 5; ++i){
 
