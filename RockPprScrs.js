@@ -1,5 +1,8 @@
 let choice = ['rock', 'paper', 'scissors'];
 
+let computerScore = 0;
+let playerScore = 0;
+
 function getComputerChoice() {
     return choice[Math.ceil(Math.random() * 3) -1];
 }
@@ -42,12 +45,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game(){
-    let computerScore = 0;
-    let playerScore = 0;
-    let gameNo = 0;
-
     for (let i = 0; i < 5; ++i){
-        let playerSelection = prompt('Game number: ', + gameNo + 'out of 5 /nEnter your choice, Rock, Paper or Scissors :');
+
+        let playerSelection = prompt('Enter your choice, Rock, Paper or Scissors :');
         console.log('Player Choice: ' + playerSelection);
 
         let computerSelection = getComputerChoice();
@@ -55,11 +55,6 @@ function game(){
 
         (playRound(playerSelection, computerSelection));
     }
-
-    gameNo++;
-
-    console.log('The Computer score is ' + computerScore);
-    console.log('The Player score is ' + playerScore);
 
     if(computerScore > playerScore) {
         console.log('Computer won the game!');
